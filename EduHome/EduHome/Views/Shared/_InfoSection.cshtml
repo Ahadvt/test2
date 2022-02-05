@@ -6,9 +6,9 @@
         <div class="row">
             <div class="col-md-6 col-sm-6">
                 <div class="about-content">
-                    <h2>WELCOME TO <span>@Model.Setting.InfoTitle</span></h2>
-                    <p>@Model.Setting.InfoDescriptionTop</p>
-                    <p class="hidden-sm">@Model.Setting.InfoDescriptionBottom</p>
+                    <h2>WELCOME TO <span>@Html.Raw(Model.Setting.InfoTitle)</span></h2>
+                    <p>@Html.Raw(Model.Setting.InfoDescriptionTop)</p>
+                    <p class="hidden-sm">@Html.Raw(Model.Setting.InfoDescriptionBottom)</p>
                     <a class="default-btn" asp-controller="about" asp-action="index">view courses</a>
                 </div>
             </div>

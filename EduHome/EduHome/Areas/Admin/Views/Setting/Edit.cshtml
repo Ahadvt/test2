@@ -33,16 +33,6 @@
                 <img style="margin-top:15px; margin-bottom:30px; display:block;" width="200" src="~/assets/img/about/@Model.InfoImg" />
             </div>
 
-            @*<div class="form-group ">
-            <label asp-for="@Model.SearchIcon">Title</label>
-            <input asp-for="@Model.SearchIcon" type="text" class="form-control">
-            <span class="mt-2 text text-danger" asp-validation-for="@Model.SearchIcon"></span>
-            <p style="margin-top:20px;">Exsist Search Icon</p>
-            <div>@Html.Raw(Model.SearchIcon)</div>
-
-        </div>*@
-
-
 
             <div class="row">
 
@@ -101,7 +91,20 @@
                 <input asp-for="@Model.Address" type="text" class="form-control">
                 <span class="mt-2 text text-danger" asp-validation-for="@Model.Address"></span>
             </div>
-            
+            <div class="col-md-4 ">
+                <label asp-for="@Model.VideoUrl">VideoUrl</label>
+                <input asp-for="@Model.VideoUrl" type="url" class="form-control">
+                <span class="mt-2 text text-danger" asp-validation-for="@Model.VideoUrl"></span>
+            </div>
+            <div class="col-md-4 ">
+            <label asp-for="@Model.SearchIcon">Search Icon</label>
+            <input asp-for="@Model.SearchIcon" type="text" class="form-control">
+            <span class="mt-2 text text-danger" asp-validation-for="@Model.SearchIcon"></span>
+            <p style="margin-top:20px;">Exsist Search Icon</p>
+            <div>@Html.Raw(Model.SearchIcon)</div>
+
+        </div>
+
             @foreach (SociamMediaSetting IconUrl in Model.SociamMediaSettings)
             {
                 <div class="col-md-4 ">
@@ -111,7 +114,7 @@
                 </div>
                 <div>@Html.Raw(IconUrl.SocialIcon)</div>
                 <div class="col-md-4 ">
-                    <label asp-for="@IconUrl.SocialUrl">Social Icon</label>
+                    <label asp-for="@IconUrl.SocialUrl">Social Url</label>
                     <input asp-for="@IconUrl.SocialUrl" type="text" class="form-control">
                     <span class="mt-2 text text-danger" asp-validation-for="@IconUrl.SocialUrl"></span>
                 </div>

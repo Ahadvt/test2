@@ -1,5 +1,5 @@
 ﻿@model Slider
-<div  class="container">
+<div class="container">
     <div class="card-body row">
         <h1 style="text-align:center; margin-bottom:20px;">Slider Create</h1>
         <form method="post" class="forms-sample" enctype="multipart/form-data">
@@ -7,9 +7,7 @@
                 <label style="margin-bottom:10px;  font-size:20px;" font-size:20px;" asp-for="@Model.ImageFile">SliderImg</label>
                 <input asp-for="@Model.ImageFile" accept="image/*" class="form-control">
                 <span class="mt-2 text text-danger" asp-validation-for="@Model.ImageFile"></span>
-
             </div>
-
             <div class="d-flex justify-content-evenly">
                 <div style="width:40%;">
                     <label style="margin-bottom:10px; font-size:20px;" asp-for="@Model.Title">SLider Title</label>
@@ -22,10 +20,6 @@
                     <span class="mt-2 text text-danger" asp-validation-for="@Model.Descrtiption"></span>
                 </div>
             </div>
-
-
-
-
             <div class="col-md-12 mt-3">
                 <a class="btn btn-dark" asp-controller="slider" asp-action="index"><i class="fas fa-undo"></i> Back</a>
                 <input type="submit" class="btn btn-primary">
@@ -37,12 +31,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js" integrity="sha512-37T7leoNS06R80c8Ulq7cdCDU5MNQBwlYoy1TX/WUsLFC2eYNqtKlV0QjH7r8JpG/S0GUMZwebnVFLPd6SU5yg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js" integrity="sha512-o6XqxgrUsKmchwy9G5VRNWSSxTS4Urr4loO6/0hYdpWmFUfHqGzawGxeQGMDqYzxjY9sbktPbNlkIQJWagVZQg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 }
-
-@section Script{ 
-<script src="~/ckeditor/ckeditor.js"></script>
-<script>
-    CKEDITOR.replace("editor")
-    CKEDITOR.replace("editor1")
-</script>
+@section Script{
+    <script src="~/ckeditor/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace("editor")
+        CKEDITOR.replace("editor1")
+    </script>
 }
-

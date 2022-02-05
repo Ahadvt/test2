@@ -7,6 +7,8 @@
                 <label style="margin-bottom:10px;  font-size:20px;" font-size:20px;" asp-for="@Model.ImageFile">SliderImg</label>
                 <input asp-for="@Model.ImageFile" accept="image/*" class="form-control">
                 <span class="mt-2 text text-danger" asp-validation-for="@Model.ImageFile"></span>
+                <p style="font-size:20px;">Exsist Image</p>
+                <img src="~/assets/img/slider/@Model.SliderImg" width="200" style="margin:30px 0px" />
 
             </div>
 

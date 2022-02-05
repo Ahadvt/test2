@@ -1,4 +1,4 @@
-﻿
+﻿@model List<Blog>
 @{
     ViewData["Title"] = "Index";
 }
@@ -25,128 +25,50 @@
         <div class="row">
             <div class="col-md-8">
                 <div class="row">
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                        <div class="single-blog mb-60">
-                            <div class="blog-img">
-                                <a href="#"><img src="~/assets/img/blog/blog1.jpg" alt="blog"></a>
-                                <div class="blog-hover">
-                                    <i class="fa fa-link"></i>
-                                </div>
-                            </div>
-                            <div class="blog-content">
-                                <div class="blog-top">
-                                    <p>By Alex  /  June 20, 2017  /  <i class="fa fa-comments-o"></i> 4</p>
-                                </div>
-                                <div class="blog-bottom">
-                                    <h2><a href="blog-details.html">I must explain to you how all this a mistaken idea </a></h2>
-                                    <a href="blog-details.html">read more</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                        <div class="single-blog mb-60">
-                            <div class="blog-img">
-                                <a href="#"><img src="~/assets/img/blog/blog2.jpg" alt="blog"></a>
-                                <div class="blog-hover">
-                                    <i class="fa fa-link"></i>
-                                </div>
-                            </div>
-                            <div class="blog-content">
-                                <div class="blog-top">
-                                    <p>By Alex  /  June 20, 2017  /  <i class="fa fa-comments-o"></i> 4</p>
-                                </div>
-                                <div class="blog-bottom">
-                                    <h2><a href="blog-details.html">I must explain to you how all this a mistaken idea </a></h2>
-                                    <a href="blog-details.html">read more</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                        <div class="single-blog mb-60">
-                            <div class="blog-img">
-                                <a href="#"><img src="~/assets/img/blog/blog3.jpg" alt="blog"></a>
-                                <div class="blog-hover">
-                                    <i class="fa fa-link"></i>
-                                </div>
-                            </div>
-                            <div class="blog-content">
-                                <div class="blog-top">
-                                    <p>By Alex  /  June 20, 2017  /  <i class="fa fa-comments-o"></i> 4</p>
-                                </div>
-                                <div class="blog-bottom">
-                                    <h2><a href="blog-details.html">I must explain to you how all this a mistaken idea </a></h2>
-                                    <a href="blog-details.html">read more</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                        <div class="single-blog mb-60">
-                            <div class="blog-img">
-                                <a href="#"><img src="~/assets/img/blog/blog4.jpg" alt="blog"></a>
-                                <div class="blog-hover">
-                                    <i class="fa fa-link"></i>
-                                </div>
-                            </div>
-                            <div class="blog-content">
-                                <div class="blog-top">
-                                    <p>By Alex  /  June 20, 2017  /  <i class="fa fa-comments-o"></i> 4</p>
-                                </div>
-                                <div class="blog-bottom">
-                                    <h2><a href="blog-details.html">I must explain to you how all this a mistaken idea </a></h2>
-                                    <a href="blog-details.html">read more</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                        <div class="single-blog">
-                            <div class="blog-img">
-                                <a href="#"><img src="~/assets/img/blog/blog5.jpg" alt="blog"></a>
-                                <div class="blog-hover">
-                                    <i class="fa fa-link"></i>
-                                </div>
-                            </div>
-                            <div class="blog-content">
-                                <div class="blog-top">
-                                    <p>By Alex  /  June 20, 2017  /  <i class="fa fa-comments-o"></i> 4</p>
-                                </div>
-                                <div class="blog-bottom">
-                                    <h2><a href="blog-details.html">I must explain to you how all this a mistaken idea </a></h2>
-                                    <a href="blog-details.html">read more</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                        <div class="single-blog">
-                            <div class="blog-img">
-                                <a href="#"><img src="~/assets/img/blog/blog6.jpg" alt="blog"></a>
-                                <div class="blog-hover">
-                                    <i class="fa fa-link"></i>
-                                </div>
-                            </div>
-                            <div class="blog-content">
-                                <div class="blog-top">
-                                    <p>By Alex  /  June 20, 2017  /  <i class="fa fa-comments-o"></i> 4</p>
-                                </div>
-                                <div class="blog-bottom">
-                                    <h2><a href="blog-details.html">I must explain to you how all this a mistaken idea </a></h2>
-                                    <a href="blog-details.html">read more</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @await Html.PartialAsync("/Views/Shared/_blogPartial.cshtml", Model);
+
                     <div class="col-md-12">
-                        <div class="pagination">
-                            <ul>
-                                <li><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                            </ul>
+
+
+                        <div>
+                            <nav aria-label="...">
+                                <ul class="pagination">
+
+                                    @if (ViewBag.CurrentPage == 1)
+                                    {
+
+
+                                        <li class="page-item disabled">
+                                            <a style="pointer-events:none" class="page-link">Previous</a>
+                                        </li>
+                                    }
+                                    else
+                                    {
+                                        <li class="page-item ">
+                                            <a asp-controller="blog" asp-action="index" asp-route-page="@(ViewBag.CurrentPage-1)" class="page-link">Previous</a>
+                                        </li>
+                                    }
+                                    @for (int i = 1; i <= ViewBag.TotalPage; i++)
+                                    {
+                                        <li class="page-item  @(ViewBag.CurrentPage == i ?  "active" : "")" style="@(ViewBag.CurrentPage==i ? "pointer-events:none" :"")"><a class="page-link" asp-controller="blog" asp-action="index" asp-route-page="@i">@i</a></li>
+                                    }
+
+                                    @if (ViewBag.TotalPage == ViewBag.CurrentPage)
+                                    {
+                                        <li class="page-item disabled">
+                                            <a style="pointer-events:none" class="page-link" asp-controller="blog" asp-action="index" asp-route-page="@(ViewBag.CurrentPage)">Next</a>
+                                        </li>
+                                    }
+                                    else
+                                    {
+                                        <li class="page-item">
+                                            <a class="page-link" asp-controller="blog" asp-action="index" asp-route-page="@(ViewBag.CurrentPage+1)">Next</a>
+                                        </li>
+                                    }
+                                </ul>
+                            </nav>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -155,12 +77,13 @@
                     <div class="single-blog-widget mb-50">
                         <h3>search</h3>
                         <div class="blog-search">
-                            <form id="search" action="#">
-                                <input type="search" placeholder="Search..." name="search" />
+                            <form method="get" asp-action="Index">
+                                <input id="search" type="search" placeholder="Search blog title and description" value="@ViewData["GetBlogDetails"]" name="BlogSearch" />
                                 <button type="submit">
                                     <span><i class="fa fa-search"></i></span>
                                 </button>
                             </form>
+
                         </div>
                     </div>
                     <div class="single-blog-widget mb-50">
@@ -182,48 +105,25 @@
                     </div>
                     <div class="single-blog-widget mb-50">
                         <h3>latest post</h3>
-                        <div class="single-post mb-30">
-                            <div class="single-post-img">
-                                <a href="blog-details.html">
-                                    <img src="~/assets/img/post/post1.jpg" alt="post">
-                                    <div class="blog-hover">
-                                        <i class="fa fa-link"></i>
-                                    </div>
-                                </a>
+                       
+                        @foreach (var item in ViewBag.blogs)
+                        {
+                            <div class="single-post mb-30">
+                                <div class="single-post-img">
+                                    <a asp-controller="blog" asp-action="details" asp-route-Id="@item.Id">
+                                        <img src="~/assets/img/post/post1.jpg" alt="post">
+                                        <div class="blog-hover">
+                                            <i class="fa fa-link"></i>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="single-post-content">
+                                    <h4><a asp-controller="blog" asp-action="details" asp-route-Id="@item.Id">@item.Title</a></h4>
+                                    <p>By Ahad  /  @item.DateTime</p>
+                                </div>
                             </div>
-                            <div class="single-post-content">
-                                <h4><a href="blog-details.html">English Language Course for you</a></h4>
-                                <p>By Alex  /  June 20, 2017</p>
-                            </div>
-                        </div>
-                        <div class="single-post mb-30">
-                            <div class="single-post-img">
-                                <a href="blog-details.html">
-                                    <img src="~/assets/img/post/post2.jpg" alt="post">
-                                    <div class="blog-hover">
-                                        <i class="fa fa-link"></i>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="single-post-content">
-                                <h4><a href="blog-details.html">Advance Web Design and Develop</a></h4>
-                                <p>By Alex  /  June 20, 2017</p>
-                            </div>
-                        </div>
-                        <div class="single-post">
-                            <div class="single-post-img">
-                                <a href="blog-details.html">
-                                    <img src="~/assets/img/post/post3.jpg" alt="post">
-                                    <div class="blog-hover">
-                                        <i class="fa fa-link"></i>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="single-post-content">
-                                <h4><a href="blog-details.html">English Language Course for you</a></h4>
-                                <p>By Alex  /  June 20, 2017</p>
-                            </div>
-                        </div>
+                        }
+
                     </div>
                     <div class="single-blog-widget">
                         <h3>tags</h3>
@@ -241,5 +141,4 @@
         </div>
     </div>
 </div>
-<!-- Blog End -->
-<!-- Subscribe Start -->
+

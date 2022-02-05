@@ -1,4 +1,4 @@
-﻿
+﻿@model List<Student>
 
 
 
@@ -10,14 +10,17 @@
                 <div class="col-md-8 col-md-offset-2 col-sm-12">
                     <div class="single-testimonial">
                         <div class="testimonial-info">
-                            <div class="testimonial-img">
-                                <img src="~/assets/img/testimonial/testimonial.jpg" alt="testimonial">
-                            </div>
-                            <div class="testimonial-content">
-                                <p>test</p>
-                                <h4>test2</h4>
-                                <h5>test3</h5>
-                            </div>
+                            @foreach (var item in Model)
+                            {
+                                <div class="testimonial-img">
+                                    <img src="~/assets/img/testimonial/@item.Img" alt="testimonial">
+                                </div>
+                                <div class="testimonial-content">
+                                    <p>@Html.Raw(item.Title)</p>
+                                    <h4>@Html.Raw(item.FullName)</h4>
+                                    <h5>@Html.Raw(item.Position.Name)</h5>
+                                </div>
+                            }
                         </div>
                     </div>
                 </div>

@@ -1,0 +1,43 @@
+﻿@model List<Blog>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container">
+    <table class="table table-sm">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Image</th>
+                <th scope="col">Title</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+
+
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (Blog blog in Model)
+            {
+                <tr>
+                    <th scope="row">@blog.Id</th>
+                    <td> <img src="~/assets/img/blog/@blog.Img" object-fit: contain; width: 100px; height: 30px; /></td>
+                    <td>@Html.Raw(blog.Title)</td>
+
+                    <td><a asp-controller="blog" asp-action="edit" asp-route-id="@blog.Id"><i class="fas fa-edit text text-primary"></i></a></td>
+                    <td><a class=" delete-item" asp-controller="blog" asp-action="delete" asp-route-id="@blog.Id"><i class="fas fa-trash text text-danger"></i></a></td>
+
+                </tr>
+            }
+
+
+
+        </tbody>
+
+
+    </table>
+    <a style="display: block; text-decoration: none; color: white; width: 100%; " asp-controller="blog" asp-action="create"> <div style="width:100%; " class="btn btn-outline-success">Create Blog </div></a>
+
+</div>
+

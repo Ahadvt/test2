@@ -11,6 +11,6 @@ namespace EduHome.Models
         public DateTime Time { get; set; }
         
         public string Title { get; set; }
-        public string VideoUrl { get; set; }
+        
     }
 }

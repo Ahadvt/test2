@@ -5,11 +5,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Migrations\20220128164105_createdallmodels.cs" />
-    <Compile Remove="Migrations\20220128164105_createdallmodels.Designer.cs" />
+    <Compile Remove="Migrations\20220204152216_createdcomment.cs" />
+    <Compile Remove="Migrations\20220204152216_createdcomment.Designer.cs" />
+    <Compile Remove="Migrations\20220204152422_changed.cs" />
+    <Compile Remove="Migrations\20220204152422_changed.Designer.cs" />
+    <Compile Remove="Migrations\20220204152811_createdcomment.cs" />
+    <Compile Remove="Migrations\20220204152811_createdcomment.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.22" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.22" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.22" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.22">

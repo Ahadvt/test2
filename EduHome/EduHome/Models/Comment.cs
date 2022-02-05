@@ -13,9 +13,11 @@ namespace EduHome.Models
         [StringLength(300)]
         public string Message { get; set; }
         public DateTime Date { get; set; }
-        public int EventId { get; set; }
-        public int BlogId { get; set; }
-        public int CourseId { get; set; }
+        public int? EventId { get; set; }
+        public int? BlogId { get; set; }
+        public int? CourseId { get; set; }
+        public string AppuserId { get; set; }
+        public Appuser Appuser { get; set; }
         public Event Event { get; set; }
         public Blog Blog { get; set; }
         public Course Course { get; set; }

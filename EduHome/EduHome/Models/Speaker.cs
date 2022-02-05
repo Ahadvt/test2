@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -15,10 +17,14 @@ namespace EduHome.Models
         [Required(ErrorMessage = "Surname is Required")]
         [StringLength(25)]
         public string SurnameName { get; set; }
-        [Required(ErrorMessage = " Img is Required")]
+       
         [StringLength(150)]
         public string Img { get; set; }
         public List<SpeakerPosition> SpeakerPositions { get; set; }
         public List<EventSpeaker> EventSpeakers { get; set; }
+        [NotMapped]
+        public IFormFile ImgFile { get; set; }
+        [NotMapped]
+        public List<int> PositionIds { get; set; }
     }
 }
